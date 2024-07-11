@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
-icon: fas fa-award
-order: 5
+icon: fas fa-id-badge
+order: 7
 ---
 
 > Under development

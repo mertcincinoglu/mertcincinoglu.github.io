@@ -1,7 +1,10 @@
 ---
-layout: projects
+# the default layout is 'page'
 icon: fas fa-project-diagram
-order: 5
+order: 4
 ---
 
 - [Bloch Sphere Simulator](https://mertcincinoglu.github.io)
+
+> Under development
+{: .prompt-warning }

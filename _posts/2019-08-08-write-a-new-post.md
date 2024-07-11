@@ -176,7 +176,7 @@ By default, the image is centered, but you can specify the position by using one
   Image will be left aligned in below sample:
 
   ```markdown
-  ![Desktop View](/assets/img/sample/mockup.png){: .normal }
+  ![Desktop View](/img/sample/mockup.png){: .normal }
   ```
   {: .nolineno}
 
