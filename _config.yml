@@ -53,8 +53,6 @@ webmaster_verifications:
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
 
-google-site-verification: QvsArbMgyoHD4MchaUWQpxcxv6RP5hLB8mqpu_9g26E
-
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
