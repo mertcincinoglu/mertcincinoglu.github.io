@@ -29,7 +29,7 @@ github:
   username: mertcincinoglu # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: # change to your twitter username
 
 social:
   # Change to your full name.
@@ -46,12 +46,14 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: QvsArbMgyoHD4MchaUWQpxcxv6RP5hLB8mqpu_9g26E # fill in your Google verification code
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
+
+#google-site-verification: QvsArbMgyoHD4MchaUWQpxcxv6RP5hLB8mqpu_9g26E
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -226,3 +228,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
