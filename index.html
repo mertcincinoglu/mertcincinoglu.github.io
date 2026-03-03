@@ -1,0 +1,181 @@
+---
+layout: none
+---
+
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title"></title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-title" id="loader-title"></div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar-fill"></div>
+        </div>
+        <div class="loader-label" id="loader-label"></div>
+    </div>
+
+    <!-- CRT Overlay Effects -->
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <div class="crt-wrapper" id="app-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg retro-nav">
+            <div class="container-fluid px-4 px-lg-5">
+                <a class="navbar-brand retro-brand" href="index.html">
+                    <span class="text-green" id="brand-name"></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#retroNavbar"
+                    aria-controls="retroNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon terminal-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="retroNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 retro-links">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html" id="nav-home"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-games"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-projects"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-about"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-contact"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container-fluid px-4 px-lg-5 d-flex flex-column justify-content-center main-terminal">
+            <div class="row w-100">
+                <div class="col-lg-10 mx-auto position-relative">
+
+                    <!-- Terminal Prompt -->
+                    <div class="terminal-prompt mb-3">
+                        <span class="typing-text" id="prompt-text"></span><span class="cursor">_</span>
+                    </div>
+
+                    <!-- Giant Titles -->
+                    <h1 class="hero-title white-glitch" id="hero-name-1"></h1>
+                    <h1 class="hero-title red-glitch" id="hero-name-2"></h1>
+
+                    <!-- Subtitles -->
+                    <div class="hero-subtitle mt-4">
+                        <p class="mb-1 chromatic-text" id="sub-1"></p>
+                        <p class="mb-1" id="sub-2"></p>
+                        <p id="sub-3" class="mt-2 text-muted-retro crt-text-effect"></p>
+                    </div>
+
+                    <!-- Action Area -->
+                    <div class="hero-actions mt-4 d-flex flex-wrap align-items-center gap-4">
+                        <a href="#" class="btn btn-retro-solid" id="btn-games"></a>
+                        <div class="social-links d-flex gap-3">
+                            <a href="https://github.com/mertcincinoglu" target="_blank" class="btn btn-social"
+                                id="btn-github"></a>
+                            <a href="https://linkedin.com/in/mertcincinoglu" target="_blank" class="btn btn-social"
+                                id="btn-linkedin"></a>
+                            <a href="https://youtube.com/@mertcincinoglu" target="_blank" class="btn btn-social"
+                                id="btn-youtube"></a>
+                            <a href="https://instagram.com/mertcincinoglu" target="_blank" class="btn btn-social"
+                                id="btn-instagram"></a>
+                        </div>
+
+                        <!-- Status Metadata -->
+                        <div class="h-stats d-flex flex-wrap gap-4 ms-lg-4 mt-3 mt-lg-0">
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-exp-lbl"></span>
+                                <span class="stat-value" id="val-exp"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-class-lbl"></span>
+                                <span class="stat-value glitch-hover" id="val-class"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-exp2-lbl"></span>
+                                <span class="stat-value" id="val-exp2"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-engine-lbl"></span>
+                                <span class="stat-value" id="val-engine"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-faction-lbl"></span>
+                                <span class="stat-value" id="val-faction"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-loc-lbl"></span>
+                                <span class="stat-value" id="val-loc"></span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label" id="stat-status-lbl"></span>
+                                <span class="stat-value status-active" id="val-status">
+                                    <span class="status-dot"></span><span id="val-status-text"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Crosshair Graphic -->
+                    <div class="floating-crosshair">
+                        <div class="crosshair-tl"></div>
+                        <div class="crosshair-tr"></div>
+                        <div class="crosshair-center"></div>
+                        <div class="crosshair-bl"></div>
+                        <div class="crosshair-br"></div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Language Toggle (Bottom Right) -->
+        <div class="lang-toggle-wrapper">
+            <span class="lang-label" id="lang-label"></span>
+            <label class="switch">
+                <input type="checkbox" id="lang-switch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <!-- Translations (all languages in one file) -->
+    <script src="src/translations.js"></script>
+    <!-- Custom JS -->
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>
