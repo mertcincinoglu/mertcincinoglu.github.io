@@ -357,6 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (icon) icon.className = 'bi bi-unlock-fill';
                     await sequencePromise;
                     btnLocate.classList.add('unlocked');
+                    valLoc.classList.add('loc-unlocked');
                     scramble(valLoc, t('location.name'), () => {
                         btnLocate.classList.remove('decrypting');
                     });
@@ -366,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (icon) icon.className = 'bi bi-lock-fill';
                     await sequencePromise;
                     btnLocate.classList.remove('unlocked');
+                    valLoc.classList.remove('loc-unlocked');
                     scramble(valLoc, t('location.coord'), () => {
                         btnLocate.classList.remove('decrypting');
                     });

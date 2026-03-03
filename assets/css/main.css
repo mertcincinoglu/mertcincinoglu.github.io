@@ -492,6 +492,10 @@ body {
         linear-gradient(var(--grid-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 40px 40px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 /* CRT Overlay Effects */
@@ -845,6 +849,11 @@ body {
 .stat-value {
     color: var(--text-white);
     font-weight: bold;
+}
+
+.loc-unlocked {
+    color: #B20D0D !important;
+    text-shadow: 0 0 5px #E94235 !important;
 }
 
 .status-active {
