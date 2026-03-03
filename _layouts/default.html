@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" id="html-root">
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+    {% include crt-overlay.html %}
+
+    <div class="crt-wrapper" id="app-wrapper">
+        {% include nav.html %}
+
+        {{ content }}
+
+        {% include lang-toggle.html %}
+    </div>
+
+    {% include scripts.html %}
+</body>
+
+</html>

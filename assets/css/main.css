@@ -14,6 +14,28 @@
     --font-mono: 'Share Tech Mono', monospace;
 }
 
+/* ── Custom Retro Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+    border-left: 1px solid rgba(0, 255, 102, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-green-dim);
+    border: 1px solid var(--neon-green);
+    box-shadow: inset 0 0 5px rgba(0, 255, 102, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
 /* ── Page Loader ─────────────────────────────────────────────────────── */
 #page-loader {
     position: fixed;
@@ -210,21 +232,248 @@
     }
 }
 
+/* Permanent glitch for specific elements */
+/* 
+   IMAGE-MATCHED ANALOG GLITCH V2
+   Focus: Precise RGB offsets, soft CRT glow, SLOWER jitter, and RESTORED tearing line.
+*/
+.glitch-hover {
+    position: relative;
+    display: inline-block;
+    color: var(--text-white);
+    background: transparent;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    /* Spaced teleporting (10s cycle) */
+    animation: analog-teleport 10s infinite step-end;
+    z-index: 1;
+}
+
+.glitch-hover::before,
+.glitch-hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* RED Offset Layer (Right/Top) + Tearing Line */
+.glitch-hover::before {
+    left: 2px;
+    top: -1px;
+    color: #ff0000;
+    text-shadow: 2px 0 3px rgba(255, 0, 0, 0.5);
+    mix-blend-mode: screen;
+    animation: analog-shift-red 2.5s infinite linear alternate-reverse,
+        pro-glitch-layers-1 4s infinite step-end;
+}
+
+/* CYAN Offset Layer (Left/Bottom) + Tearing Line */
+.glitch-hover::after {
+    left: -2px;
+    top: 1px;
+    color: #00ffff;
+    text-shadow: -2px 0 3px rgba(0, 255, 255, 0.5);
+}
+
+/* Spaced-out teleporting movement (Max 1px range, 10s cycle) */
+@keyframes analog-teleport {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    2% {
+        transform: translate(1px, -0.5px);
+    }
+
+    4% {
+        transform: translate(-0.8px, 0.8px);
+    }
+
+    22% {
+        transform: translate(0.5px, -1px);
+    }
+
+    24% {
+        transform: translate(-1px, 0.5px);
+    }
+
+    42% {
+        transform: translate(-0.8px, -0.6px);
+    }
+
+    44% {
+        transform: translate(0.6px, 0.8px);
+    }
+
+    62% {
+        transform: translate(-0.4px, -0.4px);
+    }
+
+    64% {
+        transform: translate(1px, 0.2px);
+    }
+
+    82% {
+        transform: translate(-0.8px, 0.5px);
+    }
+
+    84% {
+        transform: translate(0.6px, -0.6px);
+    }
+}
+
+
+/* Subtle drift for Red layer */
+@keyframes analog-shift-red {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(1px, -0.5px);
+    }
+}
+
+/* Subtle drift for Cyan layer */
+@keyframes analog-shift-cyan {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-1px, 0.5px);
+    }
+}
+
+/* Standard CRT Signal Bursts (Maintain for theme) */
 .crt-spike {
     animation: crt-flicker 0.1s infinite, sync-jitter 0.08s infinite !important;
+    filter: sepia(0.2) saturate(1.5) contrast(1.2) !important;
+}
+
+/* Analog Tearing (Aggressive Spikes for High Visibility) */
+@keyframes pro-glitch-layers-1 {
+    0% {
+        clip-path: inset(40% 0 55% 0);
+        transform: translateX(8px);
+    }
+
+    2% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    30% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    31% {
+        clip-path: inset(10% 0 85% 0);
+        transform: translateX(-6px);
+    }
+
+    33% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    60% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    61% {
+        clip-path: inset(70% 0 20% 0);
+        transform: translateX(10px);
+    }
+
+    63% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes pro-glitch-layers-2 {
+    0% {
+        transform: translate(0);
+    }
+
+    15% {
+        clip-path: inset(20% 0 75% 0);
+        transform: translateX(-10px);
+    }
+
+    17% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    45% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    46% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translateX(12px);
+    }
+
+    48% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    80% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    81% {
+        clip-path: inset(50% 0 45% 0);
+        transform: translateX(-8px);
+    }
+
+    83% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
 
 html,
 body {
-    overflow: hidden;
-    /* Prevent jitter scrollbars */
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Allow scrolling */
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 .crt-wrapper {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -814,13 +1063,45 @@ input:checked+.slider:before {
 
 .loc-matrix-hover {
     display: inline-block;
-    cursor: crosshair;
+    cursor: default;
     min-width: 235px;
     /* Stable width for 26 chars coords */
     white-space: nowrap;
     color: var(--text-white);
     transition: color 0.2s, text-shadow 0.2s;
 }
+
+.locate-trigger {
+    background: transparent;
+    border: 1px solid var(--neon-green-dim);
+    color: var(--neon-green);
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locate-trigger.unlocked {
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+}
+
+.locate-trigger:hover {
+    background: rgba(0, 255, 102, 0.15);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+.locate-trigger.unlocked:hover {
+    background: rgba(255, 51, 51, 0.15);
+    border-color: var(--neon-red);
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+}
+
 
 .tooltip-container .tooltip-warning {
     visibility: hidden;
@@ -927,18 +1208,6 @@ input:checked+.slider:before {
     opacity: 1;
 }
 
-/* Easter Egg: Hover Glitch */
-.glitch-hover {
-    display: inline-block;
-    cursor: default;
-}
-
-.glitch-hover:hover {
-    animation: easter-glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    color: var(--text-white);
-    text-shadow: -2px 0 var(--neon-cyan), 2px 0 var(--neon-red), -2px 2px var(--neon-green);
-}
-
 @keyframes easter-glitch-skew {
     0% {
         transform: skew(0deg);
@@ -963,4 +1232,113 @@ input:checked+.slider:before {
     100% {
         transform: skew(0deg);
     }
+}
+
+/* Terminal Decryption Overlay */
+.terminal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+}
+
+.terminal-window {
+    width: 90%;
+    max-width: 500px;
+    background: #050507;
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.terminal-header {
+    background: var(--neon-green);
+    color: #000;
+    padding: 4px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.terminal-controls span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #000;
+    margin-left: 4px;
+    opacity: 0.6;
+}
+
+.terminal-body {
+    padding: 15px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.terminal-logs {
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 0.85rem;
+    color: var(--neon-green);
+    line-height: 1.4;
+}
+
+.terminal-log-entry {
+    margin-bottom: 4px;
+}
+
+.terminal-log-entry.success {
+    color: var(--neon-cyan);
+}
+
+.terminal-log-entry.warning {
+    color: var(--neon-amber);
+}
+
+.terminal-log-entry.error {
+    color: var(--neon-red);
+}
+
+.terminal-progress-wrapper {
+    height: 10px;
+    background: #111;
+    border: 1px solid var(--neon-green-dim);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+    transition: width 0.1s linear;
+}
+
+/* Scrollbar for terminal logs */
+.terminal-logs::-webkit-scrollbar {
+    width: 4px;
+}
+
+.terminal-logs::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.terminal-logs::-webkit-scrollbar-thumb {
+    background: var(--neon-green-dim);
 }
