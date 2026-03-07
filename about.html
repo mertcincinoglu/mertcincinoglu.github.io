@@ -1,24 +1,68 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
 <!-- Terminal Prompt -->
 <div class="terminal-prompt mb-3">
-    <span class="typing-text" id="prompt-text"></span><span class="cursor">_</span>
+    <span class="typing-text" id="prompt-text" data-prompt="promptAbout"></span><span class="cursor">_</span>
 </div>
 
 <!-- Page Title -->
-<h1 class="hero-title white-glitch" id="page-heading">// About</h1>
+<h1 class="hero-title white-glitch" id="page-heading">// About Me</h1>
 
 <!-- Content -->
 <div class="hero-subtitle mt-4">
     <div class="terminal-block">
-        <p class="mb-3 chromatic-text">Game Developer &amp; 3D Artist based in Gaziantep, TR.</p>
-        <p class="mb-2 text-muted-retro">
-            I like to build things and see ideas come to life — from Unity games
-            to quantum computing visualisations.
+        <p class="mb-3 chromatic-text">Game Developer &amp; 3D Artist or whatever you say</p>
+        <p class="mb-2 text-muted-retro crt-text-effect">
+            Most of my work revolves around Unity and Blender, where I build real-time game experiences from 2D to 3D
+            and everything in between.
+            <br><br>
+            I enjoy the process as much as the result — experimenting, iterating, and refining details until everything
+            feels right.
+            <br><br>
+            Always learning, always building.
         </p>
     </div>
+</div>
+
+<!-- Status Metadata -->
+<div class="h-stats d-flex flex-wrap gap-4 mt-4">
+    <div class="stat-item">
+        <span class="stat-label" id="stat-exp-lbl"></span>
+        <span class="stat-value" id="val-exp"></span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label" id="stat-class-lbl"></span>
+        <span class="stat-value glitch-hover" id="val-class"></span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label" id="stat-exp2-lbl"></span>
+        <span class="stat-value" id="val-exp2"></span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label" id="stat-engine-lbl"></span>
+        <span class="stat-value" id="val-engine"></span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label" id="stat-faction-lbl"></span>
+        <span class="stat-value" id="val-faction"></span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label" id="stat-loc-lbl"></span>
+        <div class="d-flex align-items-center">
+            <span class="stat-value" id="val-loc"></span>
+            <button class="locate-trigger" id="btn-locate">
+                <i class="bi bi-lock-fill"></i>
+            </button>
+        </div>
+    </div>
+    <div class="stat-item">
+        <span class="stat-label" id="stat-status-lbl"></span>
+        <span class="stat-value status-active" id="val-status">
+            <span class="status-dot"></span><span id="val-status-text"></span>
+        </span>
+    </div>
+</div>
 </div>

@@ -14,83 +14,20 @@ layout: home
 <!-- Subtitles -->
 <div class="hero-subtitle mt-4">
     <p class="mb-1 chromatic-text" id="sub-1"></p>
-    <p class="mb-1" id="sub-2"></p>
     <p id="sub-3" class="mt-2 text-muted-retro crt-text-effect"></p>
 </div>
 
 <!-- Action Area -->
-<div class="hero-actions mt-4 d-flex flex-wrap align-items-center gap-4">
-    <a href="#" class="btn btn-retro-solid" id="btn-games"></a>
-    <div class="social-links d-flex gap-3">
-        <a href="https://github.com/mertcincinoglu" target="_blank" class="btn btn-social" id="btn-github"></a>
-        <a href="https://linkedin.com/in/mertcincinoglu" target="_blank" class="btn btn-social" id="btn-linkedin"></a>
-        <a href="https://youtube.com/@mertcincinoglu" target="_blank" class="btn btn-social" id="btn-youtube"></a>
-        <a href="https://instagram.com/mertcincinoglu" target="_blank" class="btn btn-social" id="btn-instagram"></a>
+<div class="hero-actions mt-5 d-flex flex-wrap align-items-center gap-4">
+    <a href="/games.html" class="btn btn-retro-solid px-5 py-3" id="btn-games"></a>
+    <div class="social-links-grid">
+        <a href="https://github.com/mertcincinoglu" target="_blank" class="btn btn-social" id="btn-github"
+            title="GitHub"></a>
+        <a href="https://linkedin.com/in/mertcincinoglu" target="_blank" class="btn btn-social" id="btn-linkedin"
+            title="LinkedIn"></a>
+        <a href="https://youtube.com/@mertcincinogludev" target="_blank" class="btn btn-social" id="btn-youtube"
+            title="YouTube"></a>
+        <a href="https://instagram.com/mertcincinogludev" target="_blank" class="btn btn-social" id="btn-instagram"
+            title="Instagram"></a>
     </div>
-
-    <!-- Status Metadata -->
-    <div class="h-stats d-flex flex-wrap gap-4 ms-lg-4 mt-3 mt-lg-0">
-        <div class="stat-item">
-            <span class="stat-label" id="stat-exp-lbl"></span>
-            <span class="stat-value" id="val-exp"></span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label" id="stat-class-lbl"></span>
-            <span class="stat-value glitch-hover" id="val-class"></span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label" id="stat-exp2-lbl"></span>
-            <span class="stat-value" id="val-exp2"></span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label" id="stat-engine-lbl"></span>
-            <span class="stat-value" id="val-engine"></span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label" id="stat-faction-lbl"></span>
-            <span class="stat-value" id="val-faction"></span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label" id="stat-loc-lbl"></span>
-            <div class="d-flex align-items-center">
-                <span class="stat-value" id="val-loc"></span>
-                <button class="locate-trigger" id="btn-locate">
-                    <i class="bi bi-lock-fill"></i>
-                </button>
-            </div>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label" id="stat-status-lbl"></span>
-            <span class="stat-value status-active" id="val-status">
-                <span class="status-dot"></span><span id="val-status-text"></span>
-            </span>
-        </div>
-    </div>
-</div>
-
-<!-- Terminal Decryption Overlay -->
-<div id="terminal-overlay" class="terminal-overlay d-none">
-    <div class="terminal-window">
-        <div class="terminal-header">
-            <span class="terminal-title">SYSTEM_DECRYPTION_PROTOCOL.EXE</span>
-            <div class="terminal-controls">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="terminal-body">
-            <div id="terminal-logs" class="terminal-logs"></div>
-            <div class="terminal-progress-wrapper mt-3">
-                <div class="terminal-progress-bar" id="terminal-progress"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Floating Crosshair Graphic -->
-<div class="floating-crosshair">
-    <div class="crosshair-tl"></div>
-    <div class="crosshair-tr"></div>
-    <div class="crosshair-center"></div>
-    <div class="crosshair-bl"></div>
-    <div class="crosshair-br"></div>
 </div>

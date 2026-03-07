@@ -2,23 +2,23 @@
 layout: page
 title: 404
 permalink: /404.html
+hide_nav: true
+hide_lang: true
 ---
 
 <div class="text-center">
-  <!-- Terminal Prompt -->
-  <div class="terminal-prompt mb-3">
-    <span class="typing-text" id="prompt-text"></span><span class="cursor">_</span>
-  </div>
-
-  <h1 class="hero-title red-glitch" style="font-size: clamp(5rem, 20vw, 14rem);">404</h1>
-  <h2 class="hero-title white-glitch" style="font-size: clamp(1.5rem, 4vw, 3rem); margin-top: -1rem;">PAGE_NOT_FOUND
+  <h1 class="hero-title red-glitch" style="font-size: clamp(10rem, 35vw, 25rem);">404</h1>
+  <h2 class="hero-title white-glitch mb-0" style="font-size: clamp(3rem, 8vw, 6rem); margin-top: -2rem;">PAGE_NOT_FOUND
   </h2>
 
-  <div class="hero-subtitle mt-4 mx-auto">
-    <p class="mb-2 text-muted-retro">The sector you are looking for does not exist in this dimension.</p>
-    <p class="mb-4 text-muted-retro" style="color: var(--neon-red) !important; opacity: 0.7;">
+  <div class="hero-subtitle mt-0 mx-auto">
+    <p class="mb-2 text-muted-retro crt-text-effect">The sector you are looking for does not exist in this dimension.
+    </p>
+    <p class="mb-4 text-muted-retro chromatic-text" style="color: var(--neon-red) !important; opacity: 0.7;">
       ERROR_CODE: 0x00000404 — NULL_POINTER_EXCEPTION
     </p>
-    <a href="{{ '/' | relative_url }}" class="btn btn-retro-solid">RETURN_TO_BASE</a>
+    <a href="{{ '/' | relative_url }}" class="btn btn-retro-solid">
+      <i class="bi bi-caret-left-fill me-2"></i>RETURN_TO_BASE
+    </a>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}" id="html-root">
+<html lang="en" id="html-root">
 
 <head>
     {% include head.html %}
@@ -8,13 +8,18 @@
 <body>
     {% include crt-overlay.html %}
 
+    <!-- App Wrapper -->
     <div class="crt-wrapper" id="app-wrapper">
+        {% unless page.hide_nav %}
         {% include nav.html %}
+        {% endunless %}
 
         {{ content }}
-
-        {% include lang-toggle.html %}
+        {% include terminal-overlay.html %}
     </div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
 
     {% include scripts.html %}
 </body>
