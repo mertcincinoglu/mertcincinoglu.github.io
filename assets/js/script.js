@@ -162,7 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let isLocUnlocked = false;
 
     function initPage(isFirstLoad = true) {
+        console.log("[System] Initializing Page...");
         initCursor();
+        initParallaxGrid();
         applyTranslations();
 
         if (isFirstLoad) {
@@ -239,28 +241,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add hover effect for clickable elements
         const clickables = document.querySelectorAll('a, button, .btn, .locate-trigger, .social-links a');
 
-        function isClickableChild(el) {
-            if (!el) return false;
-            for (let clickEl of clickables) {
-                if (clickEl.contains(el)) return true;
+        function isClickable(el) {
+            if (!el) return null;
+            return el.closest('a, button, .btn, .locate-trigger, .social-links a');
+        }
+
+        function applyHover(el, isEntering) {
+            if (isEntering) {
+                cursor.classList.add('hovering');
+                el.classList.add('js-hover');
+            } else {
+                cursor.classList.remove('hovering');
+                el.classList.remove('js-hover');
             }
-            return false;
         }
 
         clickables.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            el.addEventListener('mouseenter', () => applyHover(el, true));
+            el.addEventListener('mouseleave', () => applyHover(el, false));
         });
 
         // Check initial position on page load to see if it starts over a link
-        requestAnimationFrame(() => {
-            if (savedPos) {
-                const elUnderCursor = document.elementFromPoint(initialX, initialY);
-                if (isClickableChild(elUnderCursor)) {
-                    cursor.classList.add('hovering');
-                }
+        const checkInitialHover = () => {
+            const elUnderCursor = document.elementFromPoint(initialX, initialY);
+            const clickable = isClickable(elUnderCursor);
+            if (clickable) {
+                applyHover(clickable, true);
             }
-        });
+        };
+
+        requestAnimationFrame(checkInitialHover);
     }
 
     function startAnimations() {
@@ -554,7 +564,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+    }
 
+    function initParallaxGrid() {
+        const grid = document.getElementById('grid-bg');
+        if (!grid) {
+            console.warn("[System] Grid element #grid-bg not found.");
+            return;
+        }
+        if (typeof gsap === 'undefined') {
+            console.warn("[System] GSAP not found for parallax.");
+            return;
+        }
 
+        console.log("[System] Parallax Grid Initialized.");
+        window.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.015;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.015;
+
+            gsap.to(grid, {
+                x: moveX,
+                y: moveY,
+                duration: 1,
+                ease: 'power2.out'
+            });
+        }, { passive: true });
     }
 });

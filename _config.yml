@@ -30,6 +30,7 @@ github_username:  mertcincinoglu
 
 # Build settings
 theme: minima
+permalink: /:basename
 plugins:
   - jekyll-feed
 

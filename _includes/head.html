@@ -1,6 +1,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Smart Routing: Enforce Clean URLs & 404 on .html -->
+<script>
+    (function () {
+        const path = window.location.pathname;
+        const search = window.location.search;
+        const hash = window.location.hash;
+
+        // 1. Redirect if explicitly using .html (except for 404.html)
+        if (path.endsWith('.html') && path !== '/404.html' && path !== '/index.html') {
+            window.location.replace('/404.html');
+            return;
+        }
+
+        // 2. Redirect away from trailing slashes to keep them clean
+        if (path.length > 1 && path.endsWith('/')) {
+            window.location.replace(path.slice(0, -1) + search + hash);
+            return;
+        }
+    })();
+</script>
+
 <!-- SEO -->
 <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description"

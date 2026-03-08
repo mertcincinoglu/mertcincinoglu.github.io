@@ -16,20 +16,20 @@
                                 href="{{ '/' | relative_url }}" id="nav-home"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/games.html' or page.url == '/games/' %}active{% endif %}"
-                                href="{{ '/games.html' | relative_url }}" id="nav-games"></a>
+                            <a class="nav-link {% if page.url contains '/games' %}active{% endif %}"
+                                href="{{ '/games' | relative_url }}" id="nav-games"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/projects.html' or page.url == '/projects/' %}active{% endif %}"
-                                href="{{ '/projects.html' | relative_url }}" id="nav-projects"></a>
+                            <a class="nav-link {% if page.url contains '/projects' %}active{% endif %}"
+                                href="{{ '/projects' | relative_url }}" id="nav-projects"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/about.html' or page.url == '/about/' %}active{% endif %}"
-                                href="{{ '/about.html' | relative_url }}" id="nav-about"></a>
+                            <a class="nav-link {% if page.url contains '/about' %}active{% endif %}"
+                                href="{{ '/about' | relative_url }}" id="nav-about"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/contact.html' or page.url == '/contact/' %}active{% endif %}"
-                                href="{{ '/contact.html' | relative_url }}" id="nav-contact"></a>
+                            <a class="nav-link {% if page.url contains '/contact' %}active{% endif %}"
+                                href="{{ '/contact' | relative_url }}" id="nav-contact"></a>
                         </li>
                     </ul>
                 </div>

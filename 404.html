@@ -6,19 +6,56 @@ hide_nav: true
 hide_lang: true
 ---
 
-<div class="text-center">
-  <h1 class="hero-title red-glitch" style="font-size: clamp(10rem, 35vw, 25rem);">404</h1>
-  <h2 class="hero-title white-glitch mb-0" style="font-size: clamp(3rem, 8vw, 6rem); margin-top: -2rem;">PAGE_NOT_FOUND
-  </h2>
+<div class="no-signal-wrapper">
+  <!-- SMPTE Color Bars -->
+  <div class="smpte-bars">
+    <div class="smpte-top">
+      <div class="bar grey"></div>
+      <div class="bar yellow"></div>
+      <div class="bar cyan"></div>
+      <div class="bar green"></div>
+      <div class="bar magenta"></div>
+      <div class="bar red"></div>
+      <div class="bar blue"></div>
+    </div>
+    <div class="smpte-mid">
+      <div class="bar m-blue"></div>
+      <div class="bar m-black"></div>
+      <div class="bar m-magenta"></div>
+      <div class="bar m-black"></div>
+      <div class="bar m-cyan"></div>
+      <div class="bar m-black"></div>
+      <div class="bar m-grey"></div>
+    </div>
+    <div class="smpte-bot">
+      <div style="width: 14.28%; background: #00213c;"></div>
+      <div style="width: 14.28%; background: #ffffff;"></div>
+      <div style="width: 14.28%; background: #32006a;"></div>
+      <div style="flex-grow: 1; background: #131313;"></div>
+    </div>
+  </div>
 
-  <div class="hero-subtitle mt-0 mx-auto">
-    <p class="mb-2 text-muted-retro crt-text-effect">The sector you are looking for does not exist in this dimension.
-    </p>
-    <p class="mb-4 text-muted-retro chromatic-text" style="color: var(--neon-red) !important; opacity: 0.7;">
-      ERROR_CODE: 0x00000404 — NULL_POINTER_EXCEPTION
-    </p>
-    <a href="{{ '/' | relative_url }}" class="btn btn-retro-solid">
-      <i class="bi bi-caret-left-fill me-2"></i>RETURN_TO_BASE
-    </a>
+  <!-- Static Noise -->
+  <div class="static-noise"></div>
+
+  <!-- Content Box -->
+  <div class="no-signal-content">
+    <h1 class="signal-lost-text hero-title"
+      style="font-size: clamp(4rem, 15vw, 8rem); line-height: 1; margin-bottom: 0; color: var(--neon-red); text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);">
+      404</h1>
+    <h2 class="signal-lost-text hero-title" style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin-top: 0;">SIGNAL_LOST
+    </h2>
+
+    <div class="hero-subtitle mt-4 mx-auto" style="color: #fff !important;">
+      <p class="mb-2" style="font-size: 1rem; opacity: 0.9; max-width: 500px; font-family: var(--font-mono);">The data
+        stream for this sector has been terminated or does not exist in this dimension.</p>
+      <p class="mb-4" style="font-size: 0.85rem; color: var(--neon-red); font-family: var(--font-mono); opacity: 0.8;">
+        ERROR_CODE: 0x00000404 — NULL_POINTER_EXCEPTION</p>
+
+      <a href="{{ '/' | relative_url }}" class="btn btn-retro-solid"
+        style="background: #fff; color: #000; border-color: #fff; margin-top: 1rem;">
+        <i class="bi bi-caret-left-fill me-2"></i>REBOOT_SYSTEM
+      </a>
+    </div>
   </div>
 </div>
